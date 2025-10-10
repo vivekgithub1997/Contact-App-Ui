@@ -1,0 +1,40 @@
+<mat-toolbar color="primary">
+    <span>Smart Contact Manager</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+  
+  <div class="dashboard-container">
+    <mat-sidenav-container class="full-height">
+      <mat-sidenav mode="side" opened class="sidebar">
+        <button mat-button routerLink="/dashboard"> <img width="12" height="14" src="https://img.icons8.com/fluency/48/home.png" alt="home"/> Home</button>
+        <button mat-button routerLink="/view"><img width="12" height="14" src="https://img.icons8.com/3d-fluency/94/contacts.png" alt="contacts"/> Contacts</button>
+        <button mat-button routerLink="/add-contact"><img width="12" height="14" src="https://img.icons8.com/stickers/100/add-phone.png" alt="add-phone"/> Add Contact</button>
+        <button mat-button routerLink="/profile"> <img width="12" height="14" src="https://img.icons8.com/color/48/user-group-man-woman.png" alt="user-group-man-woman"/> Your Profile</button>
+        
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="content-area">
+        <div class="profile-layout">
+          <!-- Left Section -->
+          <div class="profile-left">
+            <p><strong>Name:</strong> -</p>
+            <p><strong>Email:</strong> -</p>
+          </div>
+  
+          <!-- Center Section -->
+          <div class="profile-center">
+            <img width="80" height="80" src="https://img.icons8.com/cotton/64/group--v2.png" alt="group--v2"/>
+           
+          </div>
+  
+          <!-- Right Section -->
+          <div class="profile-right">
+            
+            <p><strong>Role:</strong> ROLE_USER</p>
+            <p><strong>Account Active:</strong> Yes</p>
+            <p><strong>About You:</strong> -</p>
+          </div>
+        </div>
+      </mat-sidenav-content>
+    </mat-sidenav-container>
+  </div>

@@ -1,0 +1,39 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="over" position="end" class="mobile-sidenav">
+    <ng-container *ngIf="isLoggedIn">
+      <p>Welcome, <span style="color: rgb(255, 255, 255);">{{ userName }}</span></p>
+      <button mat-button (click)="logout()">Logout</button>
+    </ng-container>
+
+    <ng-container *ngIf="!isLoggedIn">
+      <button mat-button routerLink="/">Home</button>
+      <button mat-button routerLink="login">Login</button>
+      <button mat-button routerLink="register">Register</button>
+      <button mat-button routerLink="about">About</button>
+    </ng-container>
+  </mat-sidenav>
+
+  <mat-toolbar color="primary" class="navbar">
+    <button mat-icon-button (click)="sidenav.toggle()" class="mobile-toggle">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>Smart Contact Manager</span>
+    <span class="spacer"></span>
+
+    <div class="desktop-menu">
+      <ng-container *ngIf="isLoggedIn">
+        <span>Welcome, </span><span style="color: rgb(33, 9, 33);">{{ userName }}</span>
+        <button mat-button (click)="logout()">Logout</button>
+      </ng-container>
+
+      <ng-container *ngIf="!isLoggedIn">
+        <button mat-button routerLink="/">Home</button>
+        <button mat-button routerLink="login">Login</button>
+        <button mat-button routerLink="register">Register</button>
+        <button mat-button routerLink="about">About</button>
+      </ng-container>
+    </div>
+  </mat-toolbar>
+
+  <router-outlet></router-outlet>
+</mat-sidenav-container>

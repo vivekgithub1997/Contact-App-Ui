@@ -1,0 +1,38 @@
+<div class="modal-background">
+<div class="signup-container">
+    <mat-card>
+      <h2>Sign Up</h2>
+      <div *ngIf="isLoading" class="loader-overlay">
+        <div class="loader"></div>
+      </div>
+      <form #form="ngForm" (ngSubmit)="Signup()" novalidate>
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Name" [(ngModel)]="name" name="name" required #nameField="ngModel" />
+          <mat-error *ngIf="nameField.invalid && nameField.touched">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Email" [(ngModel)]="email" name="email" required email #emailField="ngModel" />
+          <mat-error *ngIf="emailField.invalid && emailField.touched">
+            Valid email is required
+          </mat-error>
+        </mat-form-field>
+      
+        <mat-form-field appearance="fill">
+          <input matInput placeholder="Password" [(ngModel)]="password" name="password" type="password" required minlength="6" #passwordField="ngModel" />
+          <mat-error *ngIf="passwordField.invalid && passwordField.touched">
+            Password is required (min 6 characters)
+          </mat-error>
+        </mat-form-field>
+      
+        <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid">
+          Sign Up
+        </button>
+        <button mat-button type="button" (click)="close.emit()">Cancel</button>
+      </form>
+
+    </mat-card>
+  </div>
+</div>

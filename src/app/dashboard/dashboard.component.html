@@ -1,0 +1,48 @@
+<mat-toolbar color="primary">
+    <span>Smart Contact Manager</span>
+    <span class="spacer"></span>
+    
+  </mat-toolbar>
+  
+  <div class="dashboard-container">
+    <mat-sidenav-container class="full-height">
+      <mat-sidenav mode="side" opened class="sidebar">
+        <button mat-button routerLink="/dashboard"> <img width="12" height="14" src="https://img.icons8.com/fluency/48/home.png" alt="home"/> Home</button>
+        <button mat-button routerLink="/view"><img width="12" height="14" src="https://img.icons8.com/3d-fluency/94/contacts.png" alt="contacts"/> Contacts</button>
+        <button mat-button routerLink="/add-contact"><img width="12" height="14" src="https://img.icons8.com/stickers/100/add-phone.png" alt="add-phone"/> Add Contact</button>
+        <button mat-button routerLink="/profile"> <img width="12" height="14" src="https://img.icons8.com/color/48/user-group-man-woman.png" alt="user-group-man-woman"/> Your Profile</button>
+        
+      </mat-sidenav>
+         
+
+      <mat-sidenav-content class="content-area">
+        <div class="home-card">
+          <h2 >Welcome to Smart Contact Manager</h2>
+      
+          <div class="home-content">
+            <!-- Profile Image -->
+            <div class="home-left">
+              <img
+                class="image-profile"  style="margin-left: 165px;"
+                src="https://img.icons8.com/3d-fluency/94/add-user-female--v2.png"
+                alt="me-right">
+              <button mat-raised-button color="accent" style="width: 160px; margin-left: 160px;" class="blinking-title" routerLink="/add-contact">
+                Add Contact
+              </button>
+            </div>
+
+            <div class="home-left">
+              <img width="100" height="100"
+                class="image-profile"  style="margin-left: 165px;"
+                src="https://img.icons8.com/color/48/call-list.png"
+                alt="me-right">
+              <button mat-raised-button color="accent" style="width: 160px; margin-left: 160px;" class="blinking-title" routerLink="/view">
+                View Contact
+              </button>
+            </div>
+          </div>
+        </div>
+      </mat-sidenav-content>
+
+         </mat-sidenav-container>
+  </div>

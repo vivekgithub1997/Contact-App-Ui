@@ -1,0 +1,98 @@
+
+<mat-toolbar color="primary">
+    <span>Smart Contact Manager</span>
+    <span class="spacer"></span>
+    
+  </mat-toolbar>
+  <div class="dashboard-container">
+    <mat-sidenav-container class="full-height">
+      <mat-sidenav mode="side" opened class="sidebar">
+        <button mat-button routerLink="/dashboard"> <img width="12" height="14" src="https://img.icons8.com/fluency/48/home.png" alt="home"/> Home</button>
+        <button mat-button routerLink="/view"><img width="12" height="14" src="https://img.icons8.com/3d-fluency/94/contacts.png" alt="contacts"/> Contacts</button>
+        <button mat-button routerLink="/add-contact"><img width="12" height="14" src="https://img.icons8.com/stickers/100/add-phone.png" alt="add-phone"/> Add Contact</button>
+        <button mat-button routerLink="/profile"> <img width="12" height="14" src="https://img.icons8.com/color/48/user-group-man-woman.png" alt="user-group-man-woman"/> Your Profile</button>
+        
+        
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="content-area">
+        <div class="home-card full-height">
+          
+        <div class="refresh-container">
+         <button class="refresh-button" (click)="refreshContacts()">
+           <img src="https://img.icons8.com/color/48/replace">   Refresh
+           </button>
+            </div>
+
+          <h2>Your Contacts</h2> 
+          
+          
+          
+          <ng-container *ngIf="contacts && contacts.length > 0; else noContacts">
+            <table mat-table [dataSource]="contacts" class="mat-elevation-z8 full-width">
+      
+              <!-- ID Column
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef>ID</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.cId }}</td>
+              </ng-container> -->
+      
+              <!-- Name Column -->
+              <ng-container matColumnDef="name">
+                <th mat-header-cell *matHeaderCellDef>Name</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.name }}</td>
+              </ng-container>
+      
+              <!-- Last Name Column -->
+              <ng-container matColumnDef="secondName">
+                <th mat-header-cell *matHeaderCellDef>Last Name</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.secondName }}</td>
+              </ng-container>
+      
+              <!-- Email Column -->
+              <ng-container matColumnDef="email">
+                <th mat-header-cell *matHeaderCellDef>Email</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.email }}</td>
+              </ng-container>
+      
+              <!-- Phone Column -->
+              <ng-container matColumnDef="phone">
+                <th mat-header-cell *matHeaderCellDef>Phone</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.phone }}</td>
+              </ng-container>
+      
+              <!-- Description Column -->
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef>Description</th>
+                <td mat-cell *matCellDef="let contact">{{ contact.description }}</td>
+              </ng-container>
+      
+              <!-- Actions Column -->
+              <ng-container matColumnDef="actions">
+                <th mat-header-cell *matHeaderCellDef>Actions</th>
+                <td mat-cell *matCellDef="let contact">
+                  <button mat-button color="warn" (click)="deleteContact(contact.cid)"><img width="30" height="30" src="https://img.icons8.com/color/48/delete-forever.png" alt="delete-forever"/></button>
+                  <button mat-button color="accent" (click)="editContact(contact)"><img width="30" height="30" src="https://img.icons8.com/color/48/pencil--v1.png" alt="pencil--v1"/></button>
+                </td>
+              </ng-container>
+      
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+    
+          </ng-container>
+      
+          <ng-template #noContacts>
+            <p class="no-data">No contacts present.</p>
+          </ng-template>
+        </div>
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+  </div>
+
+
+
+
+
+

@@ -1,0 +1,67 @@
+<mat-toolbar color="primary">
+    <span>Smart Contact Manager</span>
+    <span class="spacer"></span>
+  </mat-toolbar>
+  
+  <div class="dashboard-container">
+    <mat-sidenav-container class="full-height">
+      <mat-sidenav mode="side" opened class="sidebar">
+        <button mat-button routerLink="/dashboard"> <img width="12" height="14" src="https://img.icons8.com/fluency/48/home.png" alt="home"/> Home</button>
+        <button mat-button routerLink="/view"><img width="12" height="14" src="https://img.icons8.com/3d-fluency/94/contacts.png" alt="contacts"/> Contacts</button>
+        <button mat-button routerLink="/add-contact"><img width="12" height="14" src="https://img.icons8.com/stickers/100/add-phone.png" alt="add-phone"/> Add Contact</button>
+        <button mat-button routerLink="/profile"> <img width="12" height="14" src="https://img.icons8.com/color/48/user-group-man-woman.png" alt="user-group-man-woman"/> Your Profile</button>
+        
+        
+      </mat-sidenav>
+  
+      <mat-sidenav-content class="content-area">
+        <div class="add-contact-container">
+          
+          <div *ngIf="isLoading" class="loader-overlay">
+            <div class="loader"></div>
+          </div>
+          
+          <mat-card class="add-contact-card">
+            <h2 class="blinking-title" style="text-align: center; font-size: medium;">Add New Contact</h2>
+      
+            <form #contactForm="ngForm" (ngSubmit)="submitContact(contactForm)">
+              <mat-form-field appearance="fill">
+                <mat-label>First Name</mat-label>
+                <input matInput name="name" [(ngModel)]="contact.name" required />
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Last Name</mat-label>
+                <input matInput name="lastName" [(ngModel)]="contact.secondName" required />
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput type="email" name="email" [(ngModel)]="contact.email" required />
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Phone</mat-label>
+                <input matInput name="phone" [(ngModel)]="contact.phone" required />
+              </mat-form-field>
+      
+              <mat-form-field appearance="fill">
+                <mat-label>Description</mat-label>
+                <textarea matInput name="description" [(ngModel)]="contact.description"></textarea>
+              </mat-form-field>
+      
+              <div class="button-group">
+                <button mat-raised-button class="custom-save" type="submit" [disabled]="contactForm.invalid">
+                  Save Contact
+                </button>
+                <button mat-raised-button class="custom-reset" type="button" (click)="resetForm(contactForm)">
+                  Reset
+                </button>
+              </div>
+            </form>
+          </mat-card>
+        </div>
+      </mat-sidenav-content>
+      
+    </mat-sidenav-container>
+  </div>

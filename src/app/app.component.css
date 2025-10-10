@@ -1,0 +1,88 @@
+.navbar {
+    background: linear-gradient(to right, #3f51b5, #2196f3);
+    color: white;
+    padding: 0 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+  }
+  
+  .logo {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  button[mat-button] {
+    color: white;
+    font-weight: 500;
+    margin-left: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[mat-button]:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  .blink {
+    animation: blinkEffect 0.5s ease-in-out;
+  }
+  
+  @keyframes blinkEffect {
+    0% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+
+
+  .sidenav-container {
+    height: 100%;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .spacer {
+    flex: 1 1 auto;
+  }
+  
+  .desktop-menu {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .mobile-toggle {
+    display: none;
+  }
+  
+  .mobile-toggle mat-icon {
+    color: white; /* Makes the 3-line icon white */
+  }
+  
+  .mobile-sidenav {
+    width: 250px;
+    background-color: #2c2c2c; /* Dark background */
+    color: white; /* Light text */
+    padding: 20px;
+  }
+  
+  .mobile-sidenav button {
+    color: rgb(233, 217, 217);
+  }
+  
+  @media (max-width: 768px) {
+    .desktop-menu {
+      display: none;
+    }
+  
+    .mobile-toggle {
+      display: inline-flex;
+    }
+  }

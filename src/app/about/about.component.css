@@ -1,0 +1,50 @@
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    background: linear-gradient(to right, #e3f2fd, #bbdefb);
+    padding: 20px;
+  }
+  
+  .profile-card {
+    max-width: 500px;
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    background-color: #ffffff;
+  }
+  
+  mat-card-image {
+    height: 250px;
+    object-fit: cover;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+  
+  mat-card-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: #3f51b5;
+  }
+  
+  mat-card-subtitle {
+    font-size: 16px;
+    color: #757575;
+  }
+  
+  mat-card-content p {
+    font-size: 16px;
+    margin: 8px 0;
+  }
+  .modal-background {
+    background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/925/803/small_2x/contact-us-concept-the-icons-such-as-phone-e-mail-address-chat-global-communication-for-presentation-web-banner-and-article-business-and-network-connection-and-company-vector.jpg'); /* Adjust path if needed */
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  
