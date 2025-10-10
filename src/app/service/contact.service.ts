@@ -9,7 +9,7 @@ import { ApiResponse, Contact } from '../models/api-response.model';
 export class ContactService {
 
   
- private baseUrl = 'http://localhost:8081/contact';
+ private baseUrl = 'http://54.164.140.83:8081/contact';
 
  constructor(private http: HttpClient) {}
 
