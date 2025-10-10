@@ -11,7 +11,7 @@ export class AuthService {
   private users: any[] = [];
 
  
-  private baseUrl = 'http://54.164.140.83:8081/api/auth'; 
+  private baseUrl = 'http://localhost:8081/api/auth'; 
  
  constructor(private http: HttpClient, private router: Router ) {}
   
