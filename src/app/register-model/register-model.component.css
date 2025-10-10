@@ -1,12 +1,23 @@
-/* Container for modals like login/register */
+/* Background for modal */
 .modal-background {
-  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/925/803/small_2x/contact-us-concept-the-icons-such-as-phone-e-mail-address-chat-global-communication-for-presentation-web-banner-and-article-business-and-network-connection-and-company-vector.jpg'); /* Adjust path if needed */
+  background-image: url('https://static.vecteezy.com/system/resources/thumbnails/007/925/803/small_2x/contact-us-concept-the-icons-such-as-phone-e-mail-address-chat-global-communication-for-presentation-web-banner-and-article-business-and-network-connection-and-company-vector.jpg');
   background-size: cover;
   background-position: center;
   min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 20px 0;
+
+  /* Completely hide scrollbars */
+  overflow: hidden;
+}
+
+/* Container for signup card */
+.signup-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 16px;
 }
 
 /* Card styling */
@@ -14,8 +25,7 @@ mat-card {
   padding: 12px;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-  width: 500px;
- 
+  width: 100%;
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(4px);
 }
@@ -47,6 +57,7 @@ input[matInput] {
 
 /* Submit button */
 button[type="submit"] {
+  width: 100%;
   padding: 12px 24px;
   font-size: 16px;
   font-weight: 600;
@@ -63,27 +74,13 @@ button[type="submit"]:hover {
 
 /* Cancel button */
 button[mat-button] {
+  width: 100%;
   color: #555;
   font-weight: 500;
   margin-top: -10px;
 }
 
-/* Responsive tweaks */
-@media (max-width: 480px) {
-  mat-card {
-    padding: 24px;
-  }
-
-  mat-card h2 {
-    font-size: 22px;
-  }
-
-  button[type="submit"] {
-    font-size: 15px;
-  }
-}
-
-/*loader*/
+/* Loader overlay */
 .loader-overlay {
   position: fixed;
   top: 0;
@@ -109,4 +106,15 @@ button[mat-button] {
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  mat-card h2 {
+    font-size: 22px;
+  }
+
+  button[type="submit"] {
+    font-size: 15px;
+  }
 }
