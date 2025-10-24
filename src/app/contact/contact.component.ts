@@ -6,6 +6,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { HttpClient } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
@@ -22,7 +23,7 @@ displayedColumns: string[] = ['name', 'secondName', 'email', 'phone','descriptio
 dataSource = new MatTableDataSource<Contact>();
 @ViewChild(MatPaginator) paginator!: MatPaginator;
 
-constructor(private contactService: ContactService, private authService:AuthService,  private http: HttpClient,private snackBar: MatSnackBar,private snack:MatSnackBar) {}
+constructor(private contactService: ContactService, private router: Router,private authService:AuthService,  private http: HttpClient,private snackBar: MatSnackBar,private snack:MatSnackBar) {}
 
   
 ngOnInit(): void {
@@ -95,11 +96,12 @@ deleteContact(cid: number): void {
  
 
 
-editContact(contact: Contact) {
-  // Implement update logic here
-  console.log('Edit contact:', contact);
+
+
+   
+editContact(contact: any) {
+  // Navigate to add-contact with contact data
+  this.router.navigate(['/add-contact'], { state: { contact } });
 }
-
-
 
 }
